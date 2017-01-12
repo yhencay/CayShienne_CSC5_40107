@@ -4,6 +4,10 @@
  * Author: Shienne Cay
  * Created on January 9, 2017, 12:34 PM
  * Purpose: Homework to calculate Miles Per Gallon 
+ *      Problem: Write a program that calculates a car’s gas mileage. The
+ * program should ask the user to enter the number of gallons of gas the car 
+ * can hold and the number of miles it can be driven on a full tank. It should 
+ * then display the number of miles that may be driven per gallon of gas.
  */
 
 //System Libraries

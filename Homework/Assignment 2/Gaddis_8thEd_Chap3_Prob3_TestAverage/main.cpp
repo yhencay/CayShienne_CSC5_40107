@@ -4,6 +4,10 @@
  * Author: Shienne Cay
  * Created on January 9, 2017, 12:49 PM
  * Purpose: Homework to calculate Test Average 
+ *      Problem: Write a program that asks for five test scores. The program 
+ * should calculate the average test score and display it. The number displayed 
+ * should be formatted in fixed-point notation, with one decimal point of 
+ * precision.
  */
 
 //System Libraries
@@ -47,7 +51,8 @@ int main(int argc, char** argv) {
         avrge = (one+two+three+four+five)/5;
     
     //Output values
-        cout<<endl<<"--------------"<<endl<<"   Results"<<endl<<"--------------"<<endl;
+        cout<<endl<<"--------------"<<endl<<"   Results"
+            <<endl<<"--------------"<<endl;
         cout<<" Score 1: "<<setw(3)<<one<<endl;
         cout<<" Score 2: "<<setw(3)<<two<<endl;        
         cout<<" Score 3: "<<setw(3)<<three<<endl;        

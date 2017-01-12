@@ -19,7 +19,6 @@ using namespace std;
 
 //Function Prototypes
 
-
 //Executable code begins here! Always begins in Main
 int main(int argc, char** argv) {
     //Declare Variables

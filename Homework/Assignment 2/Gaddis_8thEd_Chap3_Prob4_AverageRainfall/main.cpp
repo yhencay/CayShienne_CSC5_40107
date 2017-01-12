@@ -4,10 +4,17 @@
  * Author: Shienne Cay
  * Created on January 9, 2017, 01:24 PM
  * Purpose: Homework Average Rainfall
+ *      Problem: Write a program that calculates the average rainfall for three 
+ * months. The program should ask the user to enter the name of each month, such
+ * as June or July, and the amount of rain (in inches) that fell each month. The
+ * program should display a message similar to the following:
+ * 
+ *      The average rainfall for June, July, and August is 6.72 inches.
  */
 
 //System Libraries
 #include <iostream>
+#include <string>
 using namespace std;
 
 //User Libraries
@@ -22,9 +29,9 @@ using namespace std;
 //Executable code begins here! Always begins in Main
 int main(int argc, char** argv) {
     //Declare Variables
-    char frsMnth[9],       //Name of first month
-         scdMnth[9],       //Name of second month
-         thdMnth[9];       //Name of third month
+    string frsMnth,       //Name of first month
+           scdMnth,       //Name of second month
+           thdMnth;       //Name of third month
     float one,          //First month's amount of rain
           two,          //Second month's amount of rain
           three,        //Third month's amount of rain
@@ -33,11 +40,11 @@ int main(int argc, char** argv) {
     //Input Values
     cout<<"Let's calculate the average rainfall for three months!"<<endl<<endl;
     cout<<"Enter the name of the 1st month: ";
-    cin>>frsMnth;
+    getline(cin, frsMnth);
     cout<<"Enter the name of the 2nd month: ";
-    cin>>scdMnth;
+    getline(cin, scdMnth);
     cout<<"Enter the name of the 3rd month: ";
-    cin>>thdMnth;
+    getline(cin, thdMnth);
     cout<<endl;
     
     cout<<"How much rainfall is there on "<<frsMnth<<"? ";
