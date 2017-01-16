@@ -19,6 +19,7 @@
 
 //System Libraries
 #include <iostream>
+#include <iomanip>
 using namespace std;
 
 //User Libraries
@@ -42,12 +43,26 @@ int main(int argc, char** argv) {
         <<"Only type your height in inches and your weight in pounds.\n"
         <<"Otherwise, result will get an inaccurate answer or an ERROR!\n"
         <<endl;
+    cout<<"Enter height (in inches): ";
+    cin>>height;
+    cout<<"Enter weight (in pounds): ";
+    cin>>weight;
+    cout<<endl<<fixed<<setprecision(2);
     
     //Process by mapping inputs to outputs
+    BMI = (weight * 703) / (height*height);
     
     //Output values
-    
-    
+    if ((BMI >= 18.5) && (BMI <= 25))
+        cout<<"Your BMI is "<<BMI<<"\nIt is considered optimal weight!"<<endl;
+    else if ((BMI < 18.5) && (BMI >0))
+        cout<<"Your BMI is "<<BMI<<"\nIt is considered underweight!"<<endl;
+    else if ((BMI > 25) && (BMI <= 30))
+        cout<<"Your BMI is "<<BMI<<"\nIt is considered overweight!"<<endl;
+    else if (BMI > 30)
+        cout<<"Your BMI is "<<BMI<<"\nIt is considered obese!"<<endl;
+    else 
+        cout<<"INVALID INPUT!"<<endl;
     //Exit stage right! - This is the 'return 0' call
     return 0;
 }

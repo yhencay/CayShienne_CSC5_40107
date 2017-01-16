@@ -28,8 +28,7 @@ int main(int argc, char** argv) {
     //Process by mapping inputs to outputs
     
     //Output values
-    
-    
+        
     //Exit stage right! - This is the 'return 0' call
     return 0;
 }
