@@ -36,7 +36,7 @@ int main(int argc, char** argv) {
     const float packA = 39.99f,     //Amount per package
                 packB = 59.99F,
                 packC = 69.99f;
-    unsigned int minUsed;           //User input for minutes used
+    int minUsed;                    //User input for minutes used
     char package;                   //Purchased package
     float bill;                     //Monthly bill of customer
     
@@ -50,7 +50,7 @@ int main(int argc, char** argv) {
     cout<<"Package C: For $69.99 per month unlimited service provided. \n"
         <<endl;
     cout<<"REMINDER: Minutes are calculated as whole numbers. Decimal and negative \n"
-        <<"input will result in a crash!"<<endl<<endl;
+        <<"input will give an error or result in a program crash!"<<endl<<endl;
     cout<<"How many minutes have you used up this month? ";
     cin>>minUsed;
     cout<<"Which package did you purchase? ";
@@ -59,6 +59,7 @@ int main(int argc, char** argv) {
     
     //Process by mapping inputs to outputs    
     //Output values
+    if (minUsed >= 0) {
     switch (package) {
         case 'a':
         case 'A': if (minUsed>450){
@@ -82,7 +83,8 @@ int main(int argc, char** argv) {
         
         default: cout<<"You can only choose from Package A, B, C!"<<endl;
     }
-        
+    }
+    else cout<<"ERROR! INVALID INPUT!"<<endl;
     //Exit stage right! - This is the 'return 0' call
     return 0;
 }

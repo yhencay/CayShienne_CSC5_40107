@@ -33,7 +33,7 @@ int main(int argc, char** argv) {
                 nickel = 0.05,
                 dime = 0.10,
                 quart = 0.25;
-    unsigned short numPen,          //User input
+    short numPen,                   //User input
                    numNic,
                    numDim,
                    numQrt;
@@ -59,10 +59,13 @@ int main(int argc, char** argv) {
     total = (penny*numPen) + (nickel*numNic) + (dime*numDim) + (quart*numQrt);
     
     //Output values
+    if ((numPen >= 0) && (numNic >= 0) && (numDim >= 0) && (numQrt >= 0 )) {
     if (total == 1) cout<<"The total is: $ "<<total<<"\nCongratulations! You won!\n";
     else if ((total < 1) && (total > 0)) cout<<"The total is: $ "<<total<<"\nSorry, it is less than a dollar!\n";
     else if (total > 1) cout<<"The total is: $ "<<total<<"\nSorry, it is greater than a dollar!\n";
     else cout<<"ERROR! INVALID INPUT\n";
+    }
+    else cout<<"ERROR! INVALID INPUT!\n";
  
     //Exit stage right! - This is the 'return 0' call
     return 0;
