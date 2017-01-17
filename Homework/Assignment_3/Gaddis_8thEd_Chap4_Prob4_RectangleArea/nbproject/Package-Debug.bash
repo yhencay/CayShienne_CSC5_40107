@@ -7,14 +7,14 @@
 # Macros
 TOP=`pwd`
 CND_PLATFORM=Cygwin-Windows
-CND_CONF=Release
+CND_CONF=Debug
 CND_DISTDIR=dist
 CND_BUILDDIR=build
 CND_DLIB_EXT=dll
 NBTMPDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}/tmp-packaging
 TMPDIRNAME=tmp-packaging
-OUTPUT_PATH=${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/gaddis_8thed_chap4_prob4_rectangle_area
-OUTPUT_BASENAME=gaddis_8thed_chap4_prob4_rectangle_area
+OUTPUT_PATH=${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/gaddis_8thed_chap4_prob4_rectanglearea
+OUTPUT_BASENAME=gaddis_8thed_chap4_prob4_rectanglearea
 PACKAGE_TOP_DIR=gaddis8thedchap4prob4rectanglearea/
 
 # Functions

@@ -24,7 +24,7 @@ CLEAN_SUBPROJECTS=${CLEAN_SUBPROJECTS_${SUBPROJECTS}}
 
 
 # Project Name
-PROJECTNAME=Gaddis_8thEd_Chap4_Prob4_Rectangle Area
+PROJECTNAME=Gaddis_8thEd_Chap4_Prob4_RectangleArea
 
 # Active Configuration
 DEFAULTCONF=Debug
