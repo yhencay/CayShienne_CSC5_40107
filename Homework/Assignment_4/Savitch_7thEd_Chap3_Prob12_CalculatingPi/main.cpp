@@ -2,14 +2,14 @@
 /* 
  * File:   main.cpp
  * Author: Shienne Cay
- * Created on January 18, 2017,  1:21 PM
- * Purpose: Homework Characters for the ASCII Codes
- *      Problem: Write a program that uses a loop to display the characters for 
- * the ASCII codes 0 through 127. Display 16 characters on each line. 
+ * Created on January 18, 2017, 12:19 PM
+ * Purpose: Calculating Pi
+ *      pi = 4 [ 1 - 1/3 + 1/5 - 1/7 + 1/9 ... + ((-1)^n/2n+1) ]
  */
 
 //System Libraries
 #include <iostream>
+#include <cmath>
 using namespace std;
 
 //User Libraries
@@ -24,12 +24,15 @@ using namespace std;
 //Executable code begins here! Always begins in Main
 int main(int argc, char** argv) {
     //Declare Variables
-    for (int nChar = 0; nChar<=127; nChar++) {
-        if (nChar%16==0) cout<<endl<<endl;
-        cout<<static_cast<char>(nChar);
-    }
-    cout<<endl;
+    unsigned int numTerm = 100;
+    float pi = 0.0;
     
+    for (int n = 0; n < numTerm; ++n) {
+        pi += 4 * pow(-1, n) / (2*n + 1);
+        cout<<"n  = "<<n<<"     "<<pi<<endl;
+    }
+    
+    cout<<"\n  PI =    "<<pi <<endl;
     //Input Values
     
     //Process by mapping inputs to outputs
