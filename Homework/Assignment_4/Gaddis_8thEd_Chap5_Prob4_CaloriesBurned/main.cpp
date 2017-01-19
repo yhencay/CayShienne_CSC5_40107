@@ -2,9 +2,11 @@
 /* 
  * File:   main.cpp
  * Author: Shienne Cay
- * Created on January 18, 2017,  1:21 PM
- * Purpose: Homework 
- *      Problem: 
+ * Created on January 18, 2017,  5:22 PM
+ * Purpose: Homework Calories Burned
+ *      Problem: Running on a particular treadmill you burn 3.6 calories per 
+ * minute. Write a program that uses a loop to display the number of calories 
+ * burned after 5, 10, 15, 20, 25, and 30 minutes.
  */
 
 //System Libraries
@@ -23,6 +25,14 @@ using namespace std;
 //Executable code begins here! Always begins in Main
 int main(int argc, char** argv) {
     //Declare Variables
+    float calBurn = 0;
+    
+    cout<<"Calories Burned After Running: "<<endl<<endl;
+    
+    for (unsigned char cal = 5; cal <= 30; cal+=5) {
+        calBurn += (3.6*5);
+        cout<<static_cast<int>(cal)<<" minutes  =  "<<calBurn<<" calories burned."<<endl;
+    }
     
     //Input Values
     
