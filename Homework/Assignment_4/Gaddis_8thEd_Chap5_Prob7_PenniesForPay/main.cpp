@@ -32,17 +32,20 @@ using namespace std;
 int main(int argc, char** argv) {
     //Declare Variables
     int daysIn;             //User input of working days
-    float penny = 0.01f,    //Starting salary
-          totSal = 0;         //Total salary based on number of days
+    float penny = 0.01f;    //Starting salary
+    double totSal = 0;         //Total salary based on number of days
     
+    cout<<"REMINDER: Minimum work day is 1.\nMaximum work day is 53.\nAny other input will result to invalid input!"<<endl<<endl;
     cout<<"How many days are you going to work? ";
     cin>>daysIn;
     cout<<endl<<fixed<<setprecision(2)<<showpoint;
     
-    if (daysIn >=1 ) {
+    if ((daysIn >=1) && (daysIn <= 53)  ) {
         cout<<"     SALARY\n";
         for (int day = 1; day <= daysIn; day++) {
-            penny*=2;    
+            if (day >=2) {
+                penny*=2;
+            }
             totSal += penny;
             cout<<"Day "<<day<<":   $ "<<penny<<endl;
         }
