@@ -31,7 +31,7 @@ int main(int argc, char** argv) {
     
     for (unsigned char cal = 5; cal <= 30; cal+=5) {
         calBurn += (3.6*5);
-        cout<<static_cast<int>(cal)<<" minutes  =  "<<calBurn<<" calories burned."<<endl;
+        cout<<static_cast<float>(cal)<<" minutes\t=   "<<calBurn<<" calories burned."<<endl;
     }
     
     //Input Values

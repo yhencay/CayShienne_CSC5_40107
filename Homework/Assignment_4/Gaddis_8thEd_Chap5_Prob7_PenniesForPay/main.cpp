@@ -47,11 +47,11 @@ int main(int argc, char** argv) {
                 penny*=2;
             }
             totSal += penny;
-            cout<<"Day "<<day<<":   $ "<<penny<<endl;
+            cout<<"Day "<<day<<":\t$ "<<penny<<endl;
         }
         cout<<endl;
-        cout<<"Days Worked:   "<<daysIn<<endl;
-        cout<<"Total Salary:  $ "<<totSal<<endl;
+        cout<<"Days Worked:\t"<<daysIn<<endl;
+        cout<<"Total Salary:\t$ "<<totSal<<endl;
     }
     else {
         cout<<"INVALID INPUT!"<<endl;

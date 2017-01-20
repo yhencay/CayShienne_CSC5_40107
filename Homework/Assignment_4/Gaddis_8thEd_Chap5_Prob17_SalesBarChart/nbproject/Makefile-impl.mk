@@ -24,7 +24,7 @@ CLEAN_SUBPROJECTS=${CLEAN_SUBPROJECTS_${SUBPROJECTS}}
 
 
 # Project Name
-PROJECTNAME=MenuProjectFile
+PROJECTNAME=Gaddis_8thEd_Chap5_Prob17_SalesBarChart
 
 # Active Configuration
 DEFAULTCONF=Debug

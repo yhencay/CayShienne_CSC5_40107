@@ -27,11 +27,16 @@ using namespace std;
 int main(int argc, char** argv) {
     //Declare Variables
     float lvl = 0;          //Ocean level per year
-
+    
+    cout<<"--------------------------------"<<endl;
+    cout<<"             TABLE"<<endl;
+    cout<<"--------------------------------"<<endl;
     //Loop ocean level til 25 years
     for (unsigned short yrs = 1; yrs <= 25; yrs++) {   
         lvl += 1.5;
-        cout<<"Year "<<yrs<<": "<<lvl<<" millimeters."<<endl;
+        cout<<"Year "<<yrs<<": ";
+        cout<<"\t";
+        cout<<lvl<<" millimeters."<<endl;
     }
     
     //Input Values

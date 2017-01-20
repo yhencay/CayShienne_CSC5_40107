@@ -24,19 +24,24 @@ using namespace std;
 int main(int argc, char** argv) {
     //Declare Variables
     string show = "X";
-    short inLine;
+    short inLine;       //User input in how many lines to use
+ 
     
+    cout<<"REMINDER: Only input positive integers not greater than 15! Doing otherwise"<<endl
+        <<"will give you an INVALID INPUT! Minimum input is 1."<<endl<<endl;
     cout<<"Input: ";
     cin>>inLine;
     cout<<endl;
-    
-    for (int line = 1; line <= (inLine*inLine); line++) {
-        if ((inLine >= 1) && (inLine <= 15)) {
+      
+    //Loop and process with if-else statement
+    if ((inLine >= 1) && (inLine <= 15)) {    
+        for (int line = 1; line <= (inLine*inLine); line++) {        
             cout<<show;
-            if ((line%inLine)==0) cout<<endl;
-        }
-        else cout<<"INVALID INPUT!";
+            if ((line%inLine)==0) cout<<endl;       //Counter so output will go on the next line    
+      }
     }
+    else cout<<"INVALID INPUT!"<<endl;
+
     
     //Input Values
     

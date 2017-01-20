@@ -9,19 +9,19 @@ CND_DISTDIR=dist
 # Debug configuration
 CND_PLATFORM_Debug=Cygwin-Windows
 CND_ARTIFACT_DIR_Debug=dist/Debug/Cygwin-Windows
-CND_ARTIFACT_NAME_Debug=menuprojectfile
-CND_ARTIFACT_PATH_Debug=dist/Debug/Cygwin-Windows/menuprojectfile
+CND_ARTIFACT_NAME_Debug=gaddis_8thed_chap5_prob17_salesbarchart
+CND_ARTIFACT_PATH_Debug=dist/Debug/Cygwin-Windows/gaddis_8thed_chap5_prob17_salesbarchart
 CND_PACKAGE_DIR_Debug=dist/Debug/Cygwin-Windows/package
-CND_PACKAGE_NAME_Debug=menuprojectfile.tar
-CND_PACKAGE_PATH_Debug=dist/Debug/Cygwin-Windows/package/menuprojectfile.tar
+CND_PACKAGE_NAME_Debug=gaddis8thedchap5prob17salesbarchart.tar
+CND_PACKAGE_PATH_Debug=dist/Debug/Cygwin-Windows/package/gaddis8thedchap5prob17salesbarchart.tar
 # Release configuration
 CND_PLATFORM_Release=Cygwin-Windows
 CND_ARTIFACT_DIR_Release=dist/Release/Cygwin-Windows
-CND_ARTIFACT_NAME_Release=menuprojectfile
-CND_ARTIFACT_PATH_Release=dist/Release/Cygwin-Windows/menuprojectfile
+CND_ARTIFACT_NAME_Release=gaddis_8thed_chap5_prob17_salesbarchart
+CND_ARTIFACT_PATH_Release=dist/Release/Cygwin-Windows/gaddis_8thed_chap5_prob17_salesbarchart
 CND_PACKAGE_DIR_Release=dist/Release/Cygwin-Windows/package
-CND_PACKAGE_NAME_Release=menuprojectfile.tar
-CND_PACKAGE_PATH_Release=dist/Release/Cygwin-Windows/package/menuprojectfile.tar
+CND_PACKAGE_NAME_Release=gaddis8thedchap5prob17salesbarchart.tar
+CND_PACKAGE_PATH_Release=dist/Release/Cygwin-Windows/package/gaddis8thedchap5prob17salesbarchart.tar
 #
 # include compiler specific variables
 #

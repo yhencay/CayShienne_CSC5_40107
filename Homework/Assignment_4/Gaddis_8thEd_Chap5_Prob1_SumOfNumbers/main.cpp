@@ -34,13 +34,13 @@ int main(int argc, char** argv) {
     cout<<"Enter a positive Integer Number: ";
     cin>>numIn;
     cout<<endl;
-    cout<<"Count"<<setw(10)<<"Sum"<<endl;
+    cout<<"Count\t"<<"\tSum"<<endl;
     
     do {
         if (numIn >= 1) {
             sum+=num;
             num++;
-            cout<<num-1<<setw(13)<<sum<<endl;
+            cout<<num-1<<"\t\t"<<sum<<endl;
         }
         else {
             cout<<"Only enter a positive number!"<<endl;

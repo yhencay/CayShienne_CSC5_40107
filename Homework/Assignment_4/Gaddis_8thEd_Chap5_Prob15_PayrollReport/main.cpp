@@ -34,17 +34,18 @@ using namespace std;
 //Executable code begins here! Always begins in Main
 int main(int argc, char** argv) {
     //Declare Variables
-    int empNum;
-    float grsPay,
-          st8Tax,
-          fedTax,
-          widFICA,
-          netPay,
-          sum;
+    int empNum;         //User input for employee number
+    float grsPay,       //gross pay
+          st8Tax,       //State tax
+          fedTax,       //Federal Tx
+          widFICA,      //FICA Withholdings
+          netPay,       //Net pay or deductions
+          sum;          //sum of state tax, federal tax and FICA Withholdings
     
     cout<<"REMINDERS: Entering 0 is exiting the program!"<<endl<<endl;    
     cout<<"PLEASE ENTER!"<<endl<<endl<<fixed<<setprecision(2)<<showpoint;
                 
+    //Loop and process
     do {
         cout<<"Employee Number: ";
         cin>>empNum;
