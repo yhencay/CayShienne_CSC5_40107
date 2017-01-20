@@ -3,7 +3,7 @@
  * File:   main.cpp
  * Author: Shienne Cay
  * Created on January 17, 2017, 12:12 PM
- * Purpose: Example Menu to be used in homework 
+ * Purpose: Assignment_4
  */
 
 //System Libraries
