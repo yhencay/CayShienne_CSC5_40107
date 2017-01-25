@@ -39,8 +39,8 @@ int main(int argc, char** argv) {
     do {
         if (numIn >= 1) {
             sum+=num;
-            num++;
-            cout<<num-1<<"\t\t"<<sum<<endl;
+            cout<<num<<"\t\t"<<sum<<endl;
+            num++;            
         }
         else {
             cout<<"Only enter a positive number!"<<endl;
