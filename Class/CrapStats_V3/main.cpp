@@ -45,7 +45,7 @@ int main(int argc, char** argv) {
     //Input the number of games
     //Last line will be number of games
     while (in>>nGames);
-    nGames = nGames>MILLION?HUNTHSD:nGames;
+    nGames = nGames>MILLION?HUNTHSD:nGames; //Limit number of ints
 
     //Loop and take dice statistics
     for (int game = 1;game<=nGames;game++) {
@@ -85,7 +85,6 @@ int main(int argc, char** argv) {
     //Process by mapping inputs to outputs
     
     //Output values
-    cout<<"Hey";
     out<<fixed<<setprecision(2)<<showpoint<<endl;
     out<<"The total number of Crap games played = "<<nGames<<endl;
     out<<"The total wins = "<<wins<<endl;
