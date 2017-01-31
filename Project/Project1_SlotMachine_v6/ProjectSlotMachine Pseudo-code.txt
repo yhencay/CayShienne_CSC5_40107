@@ -1,0 +1,242 @@
+/* 
+ * File:   main.cpp
+ * Author: Shienne Cay
+ * Created on January 27, 2017, 3:57 PM
+ * Purpose: PROJECT 1 SLOT MACHINE
+ * Problem: 
+ */
+ 
+//System Libraries
+ 
+//User Libraries
+
+//Global Constants
+//Such as PI, Vc, -> Math/Science values
+//as well as conversions from one system of measurements
+//to another
+
+//Percentage Conversion  
+
+//Function Prototypes
+
+//Executable code begins here! Always begins in Main
+
+    //Set the random seed using time
+	//Set local time and date
+	
+    //Declare Variables 
+
+    //Input Values
+
+		//Prompt user to play game or not
+			//Case statement for choice in variable Begin
+			//Only accepts 'Y' and 'N' as input
+			//If user chooses to play the game
+				//Prompt user for name to be used later for cashout using string datatype
+				
+		//Start loop
+		//Prompt user to insert cash amount for the game
+		//Validate user input for float datatype
+			//Loop if cash amount inserted is less than 1 or above the limit $20000
+			//Continue loop while budget/cash inserted <1 or >20000
+				//Add the amount inserted to total cash inserted
+				//Give cash bonus if Player decided to play
+					//If inserted amount is below 1000, get 1% of cash and multiply by itself
+					//If inserted amount is >1000 but <=2000, get 10% of cash
+					//If over 2000, get 5% of cash and add to the cash of user
+				//Round off Cash Bonus to two decimal places to get exact value
+				//Tell the user that the system added cash bonus to account
+					//Add the cash bonus to overall cash bonus in record
+						//Round off Cash amount of user to get exact cash value
+						
+	//Display current progress
+	//Name and current amount of money on system
+	
+	//Start loop for budget condition. If bool x for budget is true, continue loop.
+		//If budget is greater than 0, start loop.
+		//Prompt user to Spin or Cancel game
+		
+			//If user chose to spin and budget is greater than 0
+			//Prompt user for betting amount
+			//Validate user input for float datatype
+				//If bet is greater than the budget, display invalidity
+				//If bet is equal to 0, display invalidity
+					//If bet is less than or equal to budget and budget is greater than 0
+						//Increment total number of spins
+					//If number of spin cash bonus is reached, add cash bonus
+					//If no conditions are met, cash amount remains the same
+					//If spin cash bonus is triggered, calculate amount to be added
+						//based on same conditions for cash addition above
+				//Let user know that he/she won cash bonus for reaching specific number
+					//of spins that the game requires
+				//Add game bonus spins by itself or multiply required by 2 for next bonus
+				//Add the cash bonus earned to total cash bonus for record
+				
+			//Start rolling and generating numbers for the slot machine
+				//Value range from 4 to 8	//Value range from 4 to 8	//Value range from 4 to 8
+				//Value range from 4 to 8	//Value range from 4 to 8	//Value range from 4 to 8
+				//Value range from 4 to 8	//Value range from 4 to 8	//Value range from 4 to 8
+				
+				//Display the generated numbers
+				//Bet is deducted first before game generate wins or loss
+				
+					//If all number patterns come out, display win
+					//If all 777s come out, user wins 100x bet
+					//Increment number of wins
+					//Add winning amount to total amount of wins for record					
+					//If all same numbers come out, user wins 50x bet
+					//Increment number of wins
+					//Add winning amount to total amount of wins for record
+					
+					//If square pattern comes out, display win
+					//if 777s come out in square, user wins 15x bet					
+					//Increment number of wins
+					//Add winning amount to total amount of wins for record
+					//If normal numbers come out in square, user wins 10x bet
+					//Increment number of wins
+					//Add winning amount to total amount of wins for record
+					
+					//If cross pattern comes out, display win
+					//If cross pattern 777s come out, user wins 10x bet	
+					//Increment number of wins
+					//Add winning amount to total amount of wins for record						
+					//If cross pattern normal numbers come out, user wins 5x bet
+					//Increment number of wins
+					//Add winning amount to total amount of wins for record	
+					
+					//If X Pattern comes out, display win
+					//If X pattern 777s come out, user wins 10x bet
+					//Increment number of wins
+					//Add winning amount to total amount of wins for record	
+					//If X pattern normal numbers come out, user wins 5x bet
+					//Increment number of wins
+					//Add winning amount to total amount of wins for record	
+					
+					//If straight horizontal pattern in middle comes out, display win
+					//If straight 777s in middle come out, user wins 10x bet
+					//Increment number of wins
+					//Add winning amount to total amount of wins for record	
+					//If normal straight numbers come out, user wins 2x bet
+					//Increment number of wins
+					//Add winning amount to total amount of wins for record	
+					
+					//If straight horizontal pattern comes out, display win
+					//If straight 777s come out on top, user wins 3x bet
+					//Increment number of wins
+					//Add winning amount to total amount of wins for record	
+					//If normal number come out on top, user wins 2x bet
+					//Increment number of wins
+					//Add winning amount to total amount of wins for record	
+					
+					//If straight horizontal pattern comes out, display win
+					//If straight 777s come out below, user wins 3x bet
+					//Increment number of wins
+					//Add winning amount to total amount of wins for record	
+					//If normal number come out below, user wins 2x
+					//Increment number of wins
+					//Add winning amount to total amount of wins for record	
+					
+					//If diagonal pattern comes out, display win
+					//If 777s diagonal pattern come out, user wins 3x bet
+					//Increment number of wins
+					//Add winning amount to total amount of wins for record
+					//If normal number diagonal pattern come out, user wins 2x bet
+					//Increment number of wins
+					//Add winning amount to total amount of wins for record
+					
+					//If no winning pattern comes out, display bet deduction
+					//Increment number of loss
+					//Add loss amount to total amount of wins for record
+					
+				//Round off budget to get exact value
+			//Display Name and current money
+		
+		//Loop for spin or cancel if budget>0, bet is less than 0 and budget is > 0.
+		
+	//If user chose 'C' to cancel game
+		//If total spin count is 0 and user chose not to play game after money inserted
+		//Deduct cash bonus from inserted amount
+		//Deduct cash bonus added for total record
+			//Exit loop for spin
+			
+	//If spin count is >1, exit loop
+	
+	//If user input is not 'S' or 'C', display invalidity, ask again
+	//Continue loop til budget is 0 or choice is not to spin
+	//and boolean for boolean for budget remains true
+	
+	//If budget is 0 or turns 0, or if cash is used up
+		//Start loop for cash insert
+		//Prompt user if players wants to insert more cash to continue playing
+			//If yes, ask how much
+				//Start loop for add amount
+				//Validate user input for float datatype
+			//If add amount is is greater than 0, add to budget or current money
+			//If add amount is <= 0, diplay invalidity
+			//Amount inserted is added into total cash inserted record
+		//Round off budget for exact value
+		
+	//Display name and current money
+	//Continue loop if added inserted cash input is less than 0
+	
+	//Boolean for add game turns false.. exit loop for add cash
+	
+	//If choice is 'n' or 'N'
+	//Boolean for add game turns false.. exit loop for add cash
+	//Boolean for budget turns false, exit game play loop
+		//If user input is not 'Y' or 'N', display invalidity
+			//Continue loop if bool z for add cash remains true
+			
+	//If no conditions are met exit game play loop
+	//Continue loop if bool x for budget remains true or budget is greater than 0, continue loop
+	//Exit game play
+	
+	//If begin is 'n' or 'N', exit game prompt 
+	//Game play exit
+	
+	//If begin is not 'N' or 'Y', display invalidity
+	
+	//Start loop exit condition
+	//Calculate total money involved
+		//Loop voucher one time
+			//If chosen to exit game and there's money left on account
+			//Start printing vouchers
+		//Ticket number for voucher generator
+		//Number generator for validation code of voucher
+		//Number generator for machine number
+		
+	//Display voucher in a specific set of format
+	//Set iomanip/header format
+	
+	//Prompt user if wants to see game report
+		//If yes, display report
+	
+	//Calculate percentage of loss and win based on total number of spins
+		//Display percentage result
+		
+	//If user does not want to see game report, save report to a .dat file
+	//If user input is not either 'Y' or 'N', display invalidity 
+	
+	//If no money left on account
+		//Prompt user if he/she wants to see game report
+		//If yes, display report
+			//If user does not want to see game report, save report to a .dat file
+			
+	//Once condition reached, end game.
+	
+	//If user decides not to play game, end game
+	
+	
+			
+				
+	
+					
+				
+					
+	
+		
+
+
+
+
+
