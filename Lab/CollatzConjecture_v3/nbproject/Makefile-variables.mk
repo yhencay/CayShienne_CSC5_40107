@@ -9,19 +9,19 @@ CND_DISTDIR=dist
 # Debug configuration
 CND_PLATFORM_Debug=Cygwin-Windows
 CND_ARTIFACT_DIR_Debug=dist/Debug/Cygwin-Windows
-CND_ARTIFACT_NAME_Debug=scottsroulette
-CND_ARTIFACT_PATH_Debug=dist/Debug/Cygwin-Windows/scottsroulette
+CND_ARTIFACT_NAME_Debug=collatzconjecture_v3
+CND_ARTIFACT_PATH_Debug=dist/Debug/Cygwin-Windows/collatzconjecture_v3
 CND_PACKAGE_DIR_Debug=dist/Debug/Cygwin-Windows/package
-CND_PACKAGE_NAME_Debug=scottsroulette.tar
-CND_PACKAGE_PATH_Debug=dist/Debug/Cygwin-Windows/package/scottsroulette.tar
+CND_PACKAGE_NAME_Debug=collatzconjecturev3.tar
+CND_PACKAGE_PATH_Debug=dist/Debug/Cygwin-Windows/package/collatzconjecturev3.tar
 # Release configuration
 CND_PLATFORM_Release=Cygwin-Windows
 CND_ARTIFACT_DIR_Release=dist/Release/Cygwin-Windows
-CND_ARTIFACT_NAME_Release=scottsroulette
-CND_ARTIFACT_PATH_Release=dist/Release/Cygwin-Windows/scottsroulette
+CND_ARTIFACT_NAME_Release=collatzconjecture_v3
+CND_ARTIFACT_PATH_Release=dist/Release/Cygwin-Windows/collatzconjecture_v3
 CND_PACKAGE_DIR_Release=dist/Release/Cygwin-Windows/package
-CND_PACKAGE_NAME_Release=scottsroulette.tar
-CND_PACKAGE_PATH_Release=dist/Release/Cygwin-Windows/package/scottsroulette.tar
+CND_PACKAGE_NAME_Release=collatzconjecturev3.tar
+CND_PACKAGE_PATH_Release=dist/Release/Cygwin-Windows/package/collatzconjecturev3.tar
 #
 # include compiler specific variables
 #
