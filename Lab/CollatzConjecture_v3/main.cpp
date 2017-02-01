@@ -23,7 +23,7 @@ using namespace std;
 int main(int argc, char** argv) {
     //Declare Variables
     const int series = 200;
-    int array[series];
+    int array[series] = {};
     
     int input, res = 0;
     bool x = true;
@@ -31,7 +31,7 @@ int main(int argc, char** argv) {
     cout<<"Input number: ";
     cin>>input;
     
- //   cout<<input<<" ";
+    cout<<input;
     
 
  //   do {   
