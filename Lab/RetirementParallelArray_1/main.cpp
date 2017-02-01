@@ -34,7 +34,7 @@ int main(int argc, char** argv) {
     //Input Values
     float intRate=0.06f;
     float gift = 2.0e4f;
-    float salary = 60000;
+    float salary = 1.2e5f;
     float percSav = 0.15f;
     
     //Process by mapping inputs to outputs
