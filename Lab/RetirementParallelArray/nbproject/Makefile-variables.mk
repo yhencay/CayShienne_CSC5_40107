@@ -9,19 +9,19 @@ CND_DISTDIR=dist
 # Debug configuration
 CND_PLATFORM_Debug=Cygwin-Windows
 CND_ARTIFACT_DIR_Debug=dist/Debug/Cygwin-Windows
-CND_ARTIFACT_NAME_Debug=retirementparallelarray_1
-CND_ARTIFACT_PATH_Debug=dist/Debug/Cygwin-Windows/retirementparallelarray_1
+CND_ARTIFACT_NAME_Debug=retirementparallelarray
+CND_ARTIFACT_PATH_Debug=dist/Debug/Cygwin-Windows/retirementparallelarray
 CND_PACKAGE_DIR_Debug=dist/Debug/Cygwin-Windows/package
-CND_PACKAGE_NAME_Debug=retirementparallelarray1.tar
-CND_PACKAGE_PATH_Debug=dist/Debug/Cygwin-Windows/package/retirementparallelarray1.tar
+CND_PACKAGE_NAME_Debug=retirementparallelarray.tar
+CND_PACKAGE_PATH_Debug=dist/Debug/Cygwin-Windows/package/retirementparallelarray.tar
 # Release configuration
 CND_PLATFORM_Release=Cygwin-Windows
 CND_ARTIFACT_DIR_Release=dist/Release/Cygwin-Windows
-CND_ARTIFACT_NAME_Release=retirementparallelarray_1
-CND_ARTIFACT_PATH_Release=dist/Release/Cygwin-Windows/retirementparallelarray_1
+CND_ARTIFACT_NAME_Release=retirementparallelarray
+CND_ARTIFACT_PATH_Release=dist/Release/Cygwin-Windows/retirementparallelarray
 CND_PACKAGE_DIR_Release=dist/Release/Cygwin-Windows/package
-CND_PACKAGE_NAME_Release=retirementparallelarray1.tar
-CND_PACKAGE_PATH_Release=dist/Release/Cygwin-Windows/package/retirementparallelarray1.tar
+CND_PACKAGE_NAME_Release=retirementparallelarray.tar
+CND_PACKAGE_PATH_Release=dist/Release/Cygwin-Windows/package/retirementparallelarray.tar
 #
 # include compiler specific variables
 #
