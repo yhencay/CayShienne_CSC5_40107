@@ -19,36 +19,36 @@ using namespace std;
 //Global Constants
 //Such as PI, Vc, -> Math/Science values
 //as well as conversions from system of units to another
-const short PERCENT = 100; //Percentage conversion
+const short PERCENT = 100; 					//Percentage conversion
 
 //Function Prototypes
 void hProb1();
-float calRt8l(float, float);        //Calculate Retail
+float calRt8l(float, float);        		//Calculate Retail
 void hProb2();
-float sales();          //User input of sales figure
-void hiesP3(float, float, float, float);       //find division with highest sales figure
+float sales();          					//User input of sales figure
+void hiesP3(float, float, float, float);    //find division with highest sales figure
 void hProb3();
-int axident();                        //Input number of accidents per region
-void lwstP4(int, int, int, int, int);   //Calculate and display lowest number of accidents
+int axident();                        		//Input number of accidents per region
+void lwstP4(int, int, int, int, int);   	//Calculate and display lowest number of accidents
 void hProb4();
-float kinEngy(float, float);        //kinetic energy
+float kinEngy(float, float);        		//kinetic energy
 void hProb5();
-float celsius(short);       //Celsius Table
+float celsius(short);       				//Celsius Table
 void hProb6();
-void cnToss(int);       //Coin Toss
+void cnToss(int);       					//Coin Toss
 void hProb7();
-float presVal(float, float, float); //Present Value
+float presVal(float, float, float); 		//Present Value
 void hProb8();
-float futVal(float, float, float);      //Function to determine future value
+float futVal(float, float, float);      	//Function to determine future value
 void hProb9();
-void getScor(float &);      //Get value from user for the test scores
+void getScor(float &);      						//Get value from user for the test scores
 void calcAvg(float, float, float, float, float);    //Calculate average for test scores
 float lwstP11(float, float, float, float, float);   //Find lowest value for prob 11
 void hProb10();
-void jdgData(float &);  //Get user input
+void jdgData(float &);  							//Get user input
 void calScor(float, float, float, float, float);    //Display result
 float hiesP12(float, float, float, float, float);   //Calculate highest score
-float lwstP12(float, float, float, float, float);    //Calculate lowest score
+float lwstP12(float, float, float, float, float);   //Calculate lowest score
 
 //Executable code begins here!!!
 int main(int argc, char** argv) {
@@ -475,8 +475,8 @@ void cnToss(int toss) {
     
     string a = "Heads!", b = "Tails!", result;
     for (int count = 1; count<=toss; count++) {     //Loop count until number of toss input
-        unsigned short coin = rand()%2+1; //value from 1-2, Generate random number every loops
-        result = (coin == 2)?b:a;               //2 means Tails, 1 means heads
+        unsigned short coin = rand()%2+1; 			//value from 1-2, Generate random number every loops
+        result = (coin == 2)?b:a;              	    //2 means Tails, 1 means heads
         cout<<count<<"\t\t"<<result<<endl;
     }
 }
@@ -602,7 +602,7 @@ void hProb9(){
     
     //Process by mapping inputs to outputs      //This is both the process
     //Output values                             //and the output values
-    calcAvg(sc1, sc2, sc3, sc4, sc5);       //Display result
+    calcAvg(sc1, sc2, sc3, sc4, sc5);       	//Display result
 }
 
 //************************* Getting Scores *************************************

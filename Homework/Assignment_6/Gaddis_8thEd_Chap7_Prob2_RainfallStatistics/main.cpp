@@ -1,14 +1,20 @@
 /* 
  * File:   main.cpp
  * Author: Shienne Cay
- * Created on February 1, 2017, 1:35 PM
- * Purpose: Homework 
+ * Created on January 31, 2017, 12:58 PM
+ * Purpose: Homework Rainfall Statistics
  * 
- *      Problem: 
+ *      Problem: Write a program that lets the user enter the total rainfall for 
+ * each of 12 months into an array of doubles. The program should calculate and 
+ * display the total rainfall for the year, the average monthly rainfall, and 
+ * the months with the highest and lowest amounts.
+ *          Input Validation: Do not accept negative numbers for monthly 
+ *       rainfall figures.
  */
 
 //System Libraries
 #include <iostream>
+#include <string>
 using namespace std;
 
 //User Libraries
@@ -23,6 +29,9 @@ using namespace std;
 //Executable code begins here! Always begins in Main
 int main(int argc, char** argv) {
     //Declare Variables
+    const int SIZE = 12;
+    string months[] = {"January"
+    
     
     //Input Values
     
