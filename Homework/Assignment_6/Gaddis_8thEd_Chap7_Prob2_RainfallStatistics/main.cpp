@@ -29,8 +29,16 @@ using namespace std;
 //Executable code begins here! Always begins in Main
 int main(int argc, char** argv) {
     //Declare Variables
-    const int SIZE = 12;
-    string months[] = {"January"
+    const int SIZE = 11;
+    string months[] = {"January", "February", "March", "April",
+                       "May", "June", "July", "August", "September",
+                       "October", "November", "December" };
+    float rFall[SIZE] = {};
+    int count;
+    
+    for (count = 0; count<=SIZE;count++) {
+        cout<<months[count]<<endl;
+    }
     
     
     //Input Values
