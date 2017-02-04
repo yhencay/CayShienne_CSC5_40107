@@ -15,6 +15,7 @@
 //System Libraries
 #include <iostream>
 #include <string>
+#include <iomanip>
 using namespace std;
 
 //User Libraries
@@ -29,15 +30,24 @@ using namespace std;
 //Executable code begins here! Always begins in Main
 int main(int argc, char** argv) {
     //Declare Variables
-    const int SIZE = 11;
+    const int SIZE = 12;
     string months[] = {"January", "February", "March", "April",
                        "May", "June", "July", "August", "September",
                        "October", "November", "December" };
     float rFall[SIZE] = {};
     int count;
     
-    for (count = 0; count<=SIZE;count++) {
-        cout<<months[count]<<endl;
+    cout<<"Input Rainfall for: "<<endl<<endl;
+    
+    for (count = 0; count < SIZE; count++) {
+        cout<<months[count]<<": ";
+        cin>>rFall[count];
+    }
+    
+    cout<<endl;
+    
+    for (count = 0; count<SIZE;count++) {
+        cout<<months[count]<<"\t\t"<<rFall[count]<<endl;
     }
     
     
