@@ -1,7 +1,7 @@
 /* 
  * File:   main.cpp
  * Author: Shienne Cay
- * Created on February 1, 2017, 1:35 PM
+ * Created on February 4, 2017, 1:35 PM
  * Purpose: Homework 
  * 
  *      Problem: 
@@ -33,4 +33,3 @@ int main(int argc, char** argv) {
     //Exit stage right! - This is the 'return 0' call
     return 0;
 }
-

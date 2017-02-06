@@ -122,18 +122,7 @@ string cnvrtRN(int year) {
         case 0:break;
         default: cout<<"BAD ONES!"<<endl;
     }
-    
-    
-    
-    //Try    
-    /*
-    cout<<static_cast<int>(n1000);
-    cout<<static_cast<int>(n100);
-    cout<<static_cast<int>(n10);
-    cout<<static_cast<int>(n1);
-    */
-    
-    //Dummy string
+
     return roman;
     
 }
