@@ -24,7 +24,7 @@ CLEAN_SUBPROJECTS=${CLEAN_SUBPROJECTS_${SUBPROJECTS}}
 
 
 # Project Name
-PROJECTNAME=Project2_SlotMachine_V1
+PROJECTNAME=SortRoutine_1Function
 
 # Active Configuration
 DEFAULTCONF=Debug

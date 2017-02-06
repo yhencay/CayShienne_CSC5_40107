@@ -24,7 +24,7 @@ CLEAN_SUBPROJECTS=${CLEAN_SUBPROJECTS_${SUBPROJECTS}}
 
 
 # Project Name
-PROJECTNAME=Project2_SlotMachine_V1
+PROJECTNAME=ValueAllPosition
 
 # Active Configuration
 DEFAULTCONF=Debug
