@@ -455,11 +455,15 @@ int main(int argc, char** argv) {
                     
                     filAray(array, MINSIZE);
                     int find;
-                    cout<<"Input a number from 10-99!";
-                    cout<<"Number: ";
-                    cin>>find;
+                    if (game == 'p' || game == 'P') {
+                        cout<<"Input a number from 10-99!";
+                        cout<<"Number: ";
+                        cin>>find;
+                    }
                     
                     } while (game == 'p' || game == 'P');
+                    
+                    y=false;
                     
                 } break;
 
