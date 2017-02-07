@@ -53,7 +53,7 @@ int main(int argc, char** argv) {
     }
     
     //Process by mapping inputs to outputs
-    average = total/12;                         //Caluclate average
+    average = total/12;                         //Calculate average
     
     float highest = 0;
     for (count = 0;count < SIZE; count++) {     //Determine highest value by comparing each

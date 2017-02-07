@@ -14,7 +14,6 @@
 #include <iomanip>
 #include <cmath>
 #include <fstream>
-#include <vector>
 using namespace std;
 
 //User Libraries
@@ -26,17 +25,17 @@ using namespace std;
 const short PERCENT = 100; //Percentage Conversion  
 
 //Function Prototypes
-void winPat();              //Display Winning Patterns
+void winPat();                      //Display Winning Patterns
 float insert(float &, string);      //Insert budget
-void resetA(int &, int &, int &, float &, float &, float &, float &, float &, float &, float &);
-void gameRep(string, char, int, int, int, float, float, float, float, float, float, float);  //Game report
+void resetA(int &, int &, int &, float &, float &, float &, float &, float &, float &, float &);    //Function to reset all variables for use to 0
+void gameRep(string, char, int, int, int, float, float, float, float, float, float, float);  //View game report after a game
 void askRep();                      //Prompt for game report
-void gameRep(string, int, int, int, float, float, float, float, float, float, float); //Game report from previous 
+void gameRep(string, int, int, int, float, float, float, float, float, float, float);        //View game report from previous play
 void voucher(string, float);        //Display voucher
 float rndOffB(float, int);          //Round off Budget
 void status(float, string);         //Name and current money
-float bonCash(float, float, float, float, float, float, int, int, const float);    //Bonus cash calculation from number of spins reached
-bool valPass(string, string);
+float bonCash(float, float, float, float, float, float, int, int, float = 0);    //Bonus cash calculation from number of spins reached
+bool valPass(string, string);       //Password validation for administrator settings
 
 //Executable code begins here! Always begins in Main
 int main(int argc, char** argv) {
@@ -44,14 +43,13 @@ int main(int argc, char** argv) {
     srand(static_cast<unsigned int>(time(0)));
     
     //Declare Variables    
-    const int SIZE = 20;
+    const int SIZE = 25;                //Array Size for number of play times  
     string name,                        //Player name
            dummy;                       //Dummy string
-    string names[SIZE] = {};               //Array for player names
+    string names[SIZE] = {};            //Array for player names
     float lost[SIZE] = {}, won[SIZE] = {}, bonus[SIZE] = {}, cash[SIZE] = {};   //Arrays to store player information
-    int spins[SIZE] = {};
-    string pass = "password";           //Access personnel settings
-    string input, empName;
+    int spins[SIZE] = {};               
+    string input, empName;              //Access personnel settings to view player data
     const float bonCsh1 = 0.05f,        
                 bonCsh2 = 0.10f,        //Cash bonus percentage per spin play reached
                 bonCsh3 = 0.15f,
@@ -67,20 +65,19 @@ int main(int argc, char** argv) {
           cshIns = 0,                   //Total amount of cash inserted in the game
           totCash,                      //Total money involved including win, cash insert and bonus win
           winPer,                       //Number of games won percentage
-          lossPer,                      //Number of games lost percentage   
-          times = 1;                        //Win Multiplier
+          lossPer;                      //Number of games lost percentage
     int numWin = 0,                     //Number of win within total times played
         numLose = 0,                    //Number of loss within total times played
         play = 0,                       //Total number of plays
-        g8mBon = 10,                    //Game bonus when number of play reached!
+        g8mBon = 10,                    //Game bonus when number of plays reached!
         rndOff = 100;                   //Round off to two decimal places
-    int count = 0;                      //For array
+    int count = 0;                      //Array store count
     char begin,                         //User input to play the game
          load,                          //User adds money if you wants to play again
          choice,                        //User input to continue playing or not
          report,                        //User choice to print out game report
          start,                         //Determine if user is new or returning
-         reset;
+         reset;                         //End game - accessed only by staff
     unsigned short rn1, rn2, rn3,
                    rn4, rn5, rn6,       //Random numbers for slot machine
                    rn7, rn8, rn9;
@@ -94,11 +91,15 @@ int main(int argc, char** argv) {
     //Input Values    
     //Process by mapping inputs to outputs
     do {
-        winPat();
-
-        cout<<"\nWould you like to play the game? "<<endl;            //Prompt user to play game or not
+        if (count>SIZE) {           //If count is greater than size for array, end game
+            cout<<"Maximum numbers of players reached. Exiting game!\n"<<endl; w=false;
+        }
+        else {
+        winPat();                                                   //Display Winning patterns
+        cout<<"\nTimes Played: "<<count<<endl;                      //Display times played count
+        cout<<"\nWould you like to play the game? "<<endl;          //Prompt user to play game or not
         cout<<"      Y - YES    N - NO"<<endl<<endl;
-        cout<<"Note: Casino Staff access S for settings."<<endl<<endl;
+        cout<<"Note: Casino Staff access S for settings."<<endl<<endl;      //A setting to access database
         cout<<"CHOICE: ";
         cin>>begin;                                                 //Character variable for beginning choice
         getline(cin, dummy);                                        //Dummy string to accept cin & getline
@@ -106,8 +107,7 @@ int main(int argc, char** argv) {
         do {
             switch (begin) {                                            //Case statement for choice in variable Begin
                 case 'y':                                               //Only accepts 'Y' and 'N' as input
-                case 'Y': {  
-
+                case 'Y': { 
                     cout<<endl;                                         //If user chooses to play the game
                     cout<<"Enter Player Name: ";                        //Prompt user for name to be used later for cashout voucher
                     getline(cin, name);                                 //using string datatype
@@ -475,6 +475,9 @@ int main(int argc, char** argv) {
                     }
                     else cout<<"Log in failed!\n\n";
                 } break;
+                
+                case 'm':
+                case 'M':
 
                 default: {
                     cout<<"\nWarning: You can only enter 'Y' or 'N'!\n"<<endl;    //If begin is not 'N' or 'Y', display invalidity            
@@ -551,6 +554,7 @@ int main(int argc, char** argv) {
 
         else if (begin == 'n' || begin == 'N' || begin == 'y' || begin == 'Y'&&play<=0) {
             cout<<"\nPlay the game next time!\n"<<endl;                  //If user decides not to play game, end game 
+        }
         }
     } while (w);
      
@@ -685,7 +689,7 @@ void status(float budget, string name) {
 }
 
 float bonCash(float added, float bonCsh1, float bonCsh2, float bonCsh3, 
-        float bonCsh4, float loss, int g8mBon, int play, const float minVal) {
+        float bonCsh4, float loss, int g8mBon, int play, float minVal) {
     added = (g8mBon<=50)?(loss*bonCsh1):             //If spin cash bonus is triggered, calculate amount to be added
             (g8mBon<=100)?(loss*bonCsh2):            //based on same conditions for cash addition above
             (g8mBon<=300)?(loss*bonCsh3):
