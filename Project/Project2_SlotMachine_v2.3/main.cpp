@@ -83,6 +83,7 @@ int main(int argc, char** argv) {
          choice,                        //User input to continue playing or not
          report,                        //User choice to print out game report
          start,                         //Determine if user is new or returning
+         game,                          //User input for mini game play
          reset;                         //End game - accessed only by staff
     unsigned short rn1, rn2, rn3,
                    rn4, rn5, rn6,       //Random numbers for slot machine
@@ -447,10 +448,18 @@ int main(int argc, char** argv) {
                     cout<<"Rules: You must input a number and if it exists in the array for\n"
                         <<"  5 times, you win $10 to be added to your current money. You will\n"
                         <<"  be able to cash it if you win."<<endl<<endl;
+                    do {
+                    cout<<"PLAY?     P - PLAY     C - CANCEL"<<endl<<endl;
+                    cout<<"CHOICE: ";
+                    cin>>game; 
                     
                     filAray(array, MINSIZE);
-                    
+                    int find;
                     cout<<"Input a number from 10-99!";
+                    cout<<"Number: ";
+                    cin>>find;
+                    
+                    } while (game == 'p' || game == 'P');
                     
                 } break;
 
