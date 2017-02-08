@@ -23,14 +23,14 @@ using namespace std;
 //as well as conversions from one system of measurements
 //to another
 const short PERCENT = 100; //Percentage Conversion  
-//const int ROWS = 25, COLS = 4;  //Two Dimensional Arrays
+const int ROWS = 25, COLS = 4;  //Two Dimensional Arrays
 
 //Function Prototypes
 //void plyData(float [ROWS][COLS]);
 void filAray(int [], int);
 void winPat();                      //Display Winning Patterns
 float insert(float &, string);      //Insert budget
-void resetA(int &, int &, int &, float &, float &, float &, float &, float &, float &, float &);    //Function to reset all variables for use to 0
+void resetA(int &, int &, int &, float &, float &, float &, float &, float &, float &, float &, float&);    //Function to reset all variables for use to 0
 void gameRep(string, char, int, int, int, float, float, float, float, float, float, float);  //View game report after a game
 void askRep();                      //Prompt for game report
 void gameRep(string, int, int, int, float, float, float, float, float, float, float);        //View game report from previous play
@@ -39,6 +39,9 @@ float rndOffB(float, int);          //Round off Budget
 void status(float, string);         //Name and current money
 float bonCash(float, float, float, float, float, float, int, int, float = 0);    //Bonus cash calculation from number of spins reached
 bool valPass(string, string);       //Password validation for administrator settings
+void mrkSrt(int [], int);           //Sorting array
+void find(int [], int, int &, int);        //Search a number
+void prntAry(int [], int);
 
 //Executable code begins here! Always begins in Main
 int main(int argc, char** argv) {
@@ -67,16 +70,18 @@ int main(int argc, char** argv) {
           win = 0,                      //Total win amount
           bonWin = 0,                   //Total bonus win
           cshIns = 0,                   //Total amount of cash inserted in the game
+          minCsh = 0,                   //Total mini game win
           totCash,                      //Total money involved including win, cash insert and bonus win
           winPer,                       //Number of games won percentage
-          lossPer;                      //Number of games lost percentage
-        //  data[ROWS][COLS] = {};
+          lossPer,                      //Number of games lost percentage
+          data[ROWS][COLS] = {};
     int numWin = 0,                     //Number of win within total times played
         numLose = 0,                    //Number of loss within total times played
         play = 0,                       //Total number of plays
         g8mBon = 10,                    //Game bonus when number of plays reached!
         rndOff = 100,                   //Round off to two decimal places
-        array[MINSIZE] = {};            //For Mini-game
+        array[MINSIZE] = {},            //For Mini-game
+        found = 0;                      //Count for a number found in mini game
     int count = 0, plCount = 0;         //Array store count & player accessed count count
     char begin,                         //User input to play the game
          load,                          //User adds money if you wants to play again
@@ -104,6 +109,7 @@ int main(int argc, char** argv) {
         else {
         winPat();                                                   //Display Winning patterns
         cout<<"\nTimes Played: "<<plCount<<endl;                      //Display times played count
+        cout<<"Current Money: "<<budget<<endl;
         cout<<"\nWould you like to play the game? "<<endl;          //Prompt user to play game or not
         cout<<"      Y - YES    N - NO"<<endl<<endl;
         cout<<"Note: Casino Staff access S for settings."<<endl<<endl;      //A setting to access database
@@ -130,7 +136,7 @@ int main(int argc, char** argv) {
                         cout<<"CHOICE: ";
                         cin>>report;
                         if (report == 'Y' || report == 'y') gameRep(name,play,numWin,numLose,cshIns,win,bonWin,totCash,loss,winPer,lossPer);
-                        resetA(play, numWin, numLose, cshIns, win, bonWin, totCash, loss, winPer, lossPer);
+                        resetA(play, numWin, numLose, cshIns, win, bonWin, totCash, loss, winPer, lossPer, budget);
                         names[count] = name;
                     }
                     else if (play<=0){
@@ -139,7 +145,7 @@ int main(int argc, char** argv) {
                     }
 
                     budget = insert(budget, dummy);
-                    cshIns += budget;                                   //Add the amount inserted to total cash inserted
+                    cshIns += (budget-minCsh);                                   //Add the amount inserted to total cash inserted
 
                     float cshBon = (budget<=1000)?pow((budget*bonCshP), 2):         //Give cash bonus if Player decided to play
                                    (budget>1000&&budget<=2000)?budget*bonCsh2:      //If inserted amount is below 1000, get 1% of cash and multiply by itself
@@ -454,11 +460,33 @@ int main(int argc, char** argv) {
                     cin>>game; 
                     
                     filAray(array, MINSIZE);
-                    int find;
+                    
+                    int findN;
+                    
                     if (game == 'p' || game == 'P') {
-                        cout<<"Input a number from 10-99!";
+                        cout<<"\nInput a number from 10-99!\n\n";
                         cout<<"Number: ";
-                        cin>>find;
+                        cin>>findN;
+                        
+                        mrkSrt(array, MINSIZE);
+                        find(array, MINSIZE, found, findN);
+                        cout<<endl;
+                        prntAry(array, MINSIZE);
+                        
+                        cout<<"\nNumber "<<findN<<" occured "<<found<<" times.\n"<<endl;
+                        
+                        if (found>=5) {
+                            cout<<"Congratulations! $10 is added to the current money!\n"<<endl;
+                            budget+=10;
+                            minCsh+=10;
+                            bonWin+=minCsh;
+                        }
+                        else {
+                            cout<<"Sorry, you didn't win. Try again!\n"<<endl;
+                            budget=budget;
+                        }
+                        
+                        found = 0;
                     }
                     
                     } while (game == 'p' || game == 'P');
@@ -470,6 +498,7 @@ int main(int argc, char** argv) {
                 case 'n':
                 case 'N': {
                     cout<<"\nGoodbye!"<<endl;               //If begin is 'n' or 'N', exit game prompt 
+                    budget = 0;                             //Set money to 0 if player did not choose to play even if player won in mini game
                     y = false;                              //Game play exit
                 } break; 
 
@@ -486,9 +515,16 @@ int main(int argc, char** argv) {
                     if (valPass(input, empName)) {
                         cout<<"\nPlayer List \t\tCash Won \tCash Loss \tCash Bonus \tTotal Cash"<<endl;
                         cout<<"----------------------------------------------------------------------------------"<<endl;
-                        for (int index = 0; index < SIZE; index++) {
-                            cout<<names[index]<<"\t\t\t$"<<won[index]<<"\t\t$"<<lost[index]<<"\t\t$"<<bonus[index]<<"\t\t$"<<cash[index]<<endl;
+                        for (int cHere = 0; cHere < ROWS; cHere++) {
+                            cout<<names[cHere]<<"\t\t\t";
+                            for (int iHere = 0; iHere < COLS; iHere++) {
+                                cout<<data[cHere][iHere]<<"\t\t";
+                            }
+                            cout<<endl;
                         }
+                     //   for (int index = 0; index < SIZE; index++) {
+                     //       cout<<names[index]<<"\t\t\t$"<<won[index]<<"\t\t$"<<lost[index]<<"\t\t$"<<bonus[index]<<"\t\t$"<<cash[index]<<endl;
+                     //   }
                         cout<<"\nRESET?   Y - YES     N - NO"<<endl<<endl;
                         cout<<"CHOICE: ";
                         cin>>reset;
@@ -520,14 +556,19 @@ int main(int argc, char** argv) {
         cout<<fixed<<setprecision(2)<<showpoint;
 
         if (x == false) {                                   //Start loop exit condition
-
+            int num=0;
             totCash = cshIns + bonWin + win;                //Calculate total money involved
-            spins[count] = play;
+            data[count][num] = win; num++;
+            data[count][num] = loss; num++;
+            data[count][num] = bonWin; num++;
+            data[count][num] = totCash; num++;
+        /*    spins[count] = play;
             won[count] = win;
             lost[count] = loss;
             bonus[count] = bonWin;
-            cash[count] = totCash;
+            cash[count] = totCash;*/
             count++;
+            num-=4;
             plCount++;
 
             for (int p = 1; p <= 1; p++) {                  //Loop voucher one time
@@ -543,14 +584,14 @@ int main(int argc, char** argv) {
                                     loss, winPer, lossPer);                        
                             rep = false;
                             x = true;
-                            resetA(play, numWin, numLose, cshIns, win, bonWin, totCash, loss, winPer, lossPer);
+                            resetA(play, numWin, numLose, cshIns, win, bonWin, totCash, loss, winPer, lossPer, budget);
                         }                    
                         else if (report == 'N' || report == 'n') {                          //If user does not want to see game report
                             gameRep(name, report, play, numWin, numLose, cshIns, win, bonWin, totCash,
                                         loss, winPer, lossPer); 
                             rep = false;
                             x=true;
-                            resetA(play, numWin, numLose, cshIns, win, bonWin, totCash, loss, winPer, lossPer);
+                            resetA(play, numWin, numLose, cshIns, win, bonWin, totCash, loss, winPer, lossPer, budget);
                         }
 
                         else cout<<"\nWarning: You can only enter 'Y' or 'N'!"<<endl;        //If user input is not either 'Y' or 'N', display invalidity 
@@ -569,14 +610,14 @@ int main(int argc, char** argv) {
                                     loss, winPer, lossPer); 
                             rep = false;
                             x=true;
-                            resetA(play, numWin, numLose, cshIns, win, bonWin, totCash, loss, winPer, lossPer);
+                            resetA(play, numWin, numLose, cshIns, win, bonWin, totCash, loss, winPer, lossPer, budget);
                         }
                         else if (report == 'N' || report == 'n') {                          //If user does not want to see game report
                             gameRep(name, report, play, numWin, numLose, cshIns, win, bonWin, totCash,
                                     loss, winPer, lossPer);
                             rep = false;
                             x = true;
-                            resetA(play, numWin, numLose, cshIns, win, bonWin, totCash, loss, winPer, lossPer);
+                            resetA(play, numWin, numLose, cshIns, win, bonWin, totCash, loss, winPer, lossPer, budget);
                         }
                         else cout<<"\nWarning: You can only enter 'Y' or 'N'!"<<endl;        //If user input is not either 'Y' or 'N', display invalidity 
                     } while (rep);
@@ -607,23 +648,25 @@ void winPat() {
 }
 
 float insert(float &budget, string dummy) {
+    float addFrst;
     do {                                                  //Start loop
         cout<<"\nInsert Cash: $";                         //Prompt user to insert cash amount for the game
-        cin>>budget;               
+        cin>>addFrst;               
 
         while (cin.fail()) {                                        //User input validation of float datatype
             cout<<"\nYou must only enter a number!"<<endl<<endl;    //for cash insertion
             cout<<"Insert Cash: $";
             cin.clear();
             getline(cin, dummy);
-            cin>>budget;
+            cin>>addFrst;
         }  
 
-        if (budget < 1) cout<<"\nCash amount inserted cannot be less than 1!\n"<<endl;      
-        else if (budget > 20000) { 
+        if (addFrst < 1) cout<<"\nCash amount inserted cannot be less than 1!\n"<<endl;      
+        else if (addFrst > 20000) { 
             cout<<"\nCash inserted is above the limit!"<<endl;       //Loop if cash amount inserted is less than 1
             cout<<"Cash amount cannot go above $20000\n"<<endl;      //or above the limit $20000
         }
+        else budget+=addFrst;
 
     } while ((budget < 1) || budget > 20000);           //Continue loop while budget/cash inserted <1 or >20000
     return budget;
@@ -764,10 +807,40 @@ bool valPass(string input, string empName) {
 }
 
 void resetA(int &play, int &numWin, int &numLose, float &cshIns, float &win, 
-        float &bonWin, float &totCash, float &loss, float &winPer, float &lossPer) {
-    play = 0; numWin = 0; numLose = 0; cshIns = 0; win = 0; bonWin = 0; totCash = 0; loss = 0; winPer = 0; lossPer = 0;
+        float &bonWin, float &totCash, float &loss, float &winPer, float &lossPer, float &budget) {
+    play = 0; numWin = 0; numLose = 0; cshIns = 0; win = 0; bonWin = 0; totCash = 0; loss = 0; winPer = 0; lossPer = 0; budget = 0;
 }
 
 void filAray(int array[], int MINSIZE) {
-    for (int index = 0; index < MINSIZE; index++) array[index] = rand()%99+10;
+    for (int index = 0; index < MINSIZE; index++) array[index] = rand()%(99-10+1)+10;
 }
+
+void mrkSrt(int array[], int MINSIZE) {
+    for(int j=0;j<MINSIZE-1;j++){
+        for(int i=j+1;i<MINSIZE;i++){
+            if(array[j]>array[i]){
+                array[j]=array[j]^array[i];
+                array[i]=array[j]^array[i];
+                array[j]=array[j]^array[i];
+            }
+        }        
+    }
+}
+
+void find(int array[], int MINSIZE, int &found, int findN) {
+    if (findN>=10&&findN<=99) {
+        for (int count = 0; count < MINSIZE; count++) {
+            if (array[count] == findN) found++;
+            else found = found;
+        }
+    }
+    else cout<<"\nInvalid input!\n";
+}
+
+void prntAry(int a[], int s) {
+    for (int c = 0; c<s; c++) {
+        cout<<a[c]<<" ";
+        if (c%10==9) cout<<endl;
+    }
+}
+
