@@ -47,7 +47,7 @@ int main(int argc, char** argv) {
     
     //Declare Variables    
     const int SIZE = 25;                //Array Size for number of play times 
-    const int MINSIZE = 100;
+    const int MINSIZE = 100;            //Size for array in Mini game
     string name,                        //Player name
            dummy;                       //Dummy string
     string names[SIZE] = {};            //Array for player names
@@ -76,8 +76,8 @@ int main(int argc, char** argv) {
         play = 0,                       //Total number of plays
         g8mBon = 10,                    //Game bonus when number of plays reached!
         rndOff = 100,                   //Round off to two decimal places
-        array[MINSIZE] = {};
-    int count = 0;                      //Array store count
+        array[MINSIZE] = {};            //For Mini-game
+    int count = 0, plCount = 0;         //Array store count & player accessed count count
     char begin,                         //User input to play the game
          load,                          //User adds money if you wants to play again
          choice,                        //User input to continue playing or not
@@ -98,12 +98,12 @@ int main(int argc, char** argv) {
     //Input Values    
     //Process by mapping inputs to outputs
     do {
-        if (count>SIZE) {           //If count is greater than size for array, end game
-            cout<<"Maximum numbers of players reached. Exiting game!\n"<<endl; w=false;
+        if (plCount>SIZE) {           //If count is greater than size for array, end game
+            cout<<"Maximum numbers of players reached. Exiting game!\n"<<endl; w=false; //begin = 'S';
         }
         else {
         winPat();                                                   //Display Winning patterns
-        cout<<"\nTimes Played: "<<count<<endl;                      //Display times played count
+        cout<<"\nTimes Played: "<<plCount<<endl;                      //Display times played count
         cout<<"\nWould you like to play the game? "<<endl;          //Prompt user to play game or not
         cout<<"      Y - YES    N - NO"<<endl<<endl;
         cout<<"Note: Casino Staff access S for settings."<<endl<<endl;      //A setting to access database
@@ -486,8 +486,8 @@ int main(int argc, char** argv) {
                     if (valPass(input, empName)) {
                         cout<<"\nPlayer List \t\tCash Won \tCash Loss \tCash Bonus \tTotal Cash"<<endl;
                         cout<<"----------------------------------------------------------------------------------"<<endl;
-                        for (count = 0; count < SIZE; count++) {
-                            cout<<names[count]<<"\t\t\t$"<<won[count]<<"\t\t$"<<lost[count]<<"\t\t$"<<bonus[count]<<"\t\t$"<<cash[count]<<endl;
+                        for (int index = 0; index < SIZE; index++) {
+                            cout<<names[index]<<"\t\t\t$"<<won[index]<<"\t\t$"<<lost[index]<<"\t\t$"<<bonus[index]<<"\t\t$"<<cash[index]<<endl;
                         }
                         cout<<"\nRESET?   Y - YES     N - NO"<<endl<<endl;
                         cout<<"CHOICE: ";
@@ -505,7 +505,9 @@ int main(int argc, char** argv) {
                         }
                         else cout<<"\nWarning: You can only enter 'Y' or 'N'!\nRepeat process to access!\n"<<endl;
                     }
-                    else cout<<"Log in failed!\n\n";
+                    else {
+                        cout<<"Log in failed!\n\n";
+                        x=true; y=false; }
                 } break;
                 
                 default: {
@@ -526,6 +528,7 @@ int main(int argc, char** argv) {
             bonus[count] = bonWin;
             cash[count] = totCash;
             count++;
+            plCount++;
 
             for (int p = 1; p <= 1; p++) {                  //Loop voucher one time
                 if (budget>minVal) {                                                  //If chosen to exit game and there's money left on account
