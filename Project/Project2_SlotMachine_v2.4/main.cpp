@@ -481,7 +481,7 @@ int main(int argc, char** argv) {
                         
                         cout<<"\nNumber "<<findN<<" occured "<<found<<" times.\n"<<endl;       //Display result
                         
-                        if (found>=3) {             //If user input occurred 5 times or more, add $10 to money
+                        if (found>=3) {             //If user input occurred 3 times or more, add $5 to money
                             cout<<"Congratulations! $5 is added to the current money!\n"<<endl;
                             budget+=5;
                             minCsh+=5;
@@ -571,7 +571,7 @@ int main(int argc, char** argv) {
             data[count][num] = win; num++;
             data[count][num] = loss; num++;
             count++;                                        //Increase row
-            num-=4;                                         //Decrease colum back to 0        
+            num-=4;                                         //Decrease column back to 0        
             plCount++;                                      //Increment total player count
 
             for (int p = 1; p <= 1; p++) {                  //Loop voucher one time
