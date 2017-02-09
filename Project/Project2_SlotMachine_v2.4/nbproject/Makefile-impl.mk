@@ -24,7 +24,7 @@ CLEAN_SUBPROJECTS=${CLEAN_SUBPROJECTS_${SUBPROJECTS}}
 
 
 # Project Name
-PROJECTNAME=Project2_SlotMachine_v3
+PROJECTNAME=Project2_SlotMachine_v2.4
 
 # Active Configuration
 DEFAULTCONF=Debug
